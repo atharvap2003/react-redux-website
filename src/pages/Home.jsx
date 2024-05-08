@@ -27,14 +27,14 @@ const home = () => {
             className="rounded-full shadow-md mb-4 lg:w-64 w-36  border-gray-500"
           />
           <h1 className="text-3xl font-bold mb-2">Atharva Pandharikar</h1>
-          <p className="text-center text-xl mb-4 lg:px-32">
+          <p className="text-center lg:text-xl text-base mb-4 lg:px-32">
             Hi 👋! I’m Atharva , I am a dedicated and skilled professional with
             experience in Information Technology, proficient in languages such
             as Java and JavaScript, and equipped with knowledge in MERN Stack,
-            TailwindCSS, Firebase. My strength lies in dedication, staying
-            updated, expanding skills, and applying expertise to deliver
-            exceptional results in the IT industry andcontribute to project
-            success.
+            Redux toolkit, TailwindCSS, Firebase. My strength lies in
+            dedication, staying updated, expanding skills, and applying
+            expertise to deliver exceptional results in the IT industry
+            andcontribute to project success.
           </p>
           <div className="flex space-x-4 items-center justify-center mt-1">
             <a
@@ -55,43 +55,51 @@ const home = () => {
               target="_"
               className=" text-2xl text-black hover:text-gray-400 hover:cursor-pointer font-bold"
             >
-              <FiLinkedin className={
+              <FiLinkedin
+                className={
                   isDarkMode
                     ? "text-3xl text-zinc-200 hover:text-gray-400"
                     : "text-3xl text-black hover:text-gray-400 hover:cursor-pointer font-bold"
-                } />
+                }
+              />
             </a>
             <a
               href="https://github.com/atharvap2003"
               target="_"
               className=" text-2xl text-black hover:text-gray-400 hover:cursor-pointer font-bold"
             >
-              <LuGithub className={
+              <LuGithub
+                className={
                   isDarkMode
                     ? "text-3xl text-zinc-200 hover:text-gray-400"
                     : "text-3xl text-black hover:text-gray-400 hover:cursor-pointer font-bold"
-                } />
+                }
+              />
             </a>
             <a
               href="https://www.instagram.com/atharva_pandharikar/"
               target="_"
               className=" text-2xl text-black hover:text-gray-400 hover:cursor-pointer font-bold"
             >
-              <FaInstagram className={
+              <FaInstagram
+                className={
                   isDarkMode
                     ? "text-3xl text-zinc-200 hover:text-gray-400"
                     : "text-3xl text-black hover:text-gray-400 hover:cursor-pointer font-bold"
-                } />
+                }
+              />
             </a>
             <a
               href="https://google.com"
               className=" text-2xl text-black hover:text-gray-400 hover:cursor-pointer font-bold"
             >
-              <IoDocumentTextOutline className={
+              <IoDocumentTextOutline
+                className={
                   isDarkMode
                     ? "text-3xl text-zinc-200 hover:text-gray-400"
                     : "text-3xl text-black hover:text-gray-400 hover:cursor-pointer font-bold"
-                } />
+                }
+              />
             </a>
           </div>
         </div>
