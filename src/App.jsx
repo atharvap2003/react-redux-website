@@ -11,13 +11,12 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import { useSelector, useDispatch } from "react-redux";
 
-
 const App = () => {
-  const dispatch = useDispatch();
-  const isDarkMode = useSelector((state)=> state.theme.isDarkMode);
+  // const dispatch = useDispatch();
+  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
   return (
-    <BrowserRouter >
-    <div className={isDarkMode? ' bg-darktheme text-gray-300' : "" }>
+    <BrowserRouter>
+      <div className={isDarkMode ? " bg-darktheme text-gray-300" : ""}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,10 +24,10 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/error" element={<FourOfour />} />
         </Routes>
-        <Footer/>
-    </div>
-      </BrowserRouter>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
