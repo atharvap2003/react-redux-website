@@ -54,7 +54,7 @@ const Navbar = () => {
             </p>
 
             <a
-              href="/conatct"
+              href="/contact"
               className={
                 isDarkMode
                   ? "text-zinc-200  dark:hover:text-grey"

@@ -25,7 +25,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      name: "Product3",
+      name: "Movie Search Website",
       image: "../assets/Screenshot (24).png",
       description:
         "Created using nextjs, firebase, framerMotion, tailwindcss. A web applications to describe about mushroom selling business.",
