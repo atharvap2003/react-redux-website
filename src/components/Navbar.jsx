@@ -18,7 +18,7 @@ const Navbar = () => {
       <nav className="p-5">
         <div className="container mx-auto flex justify-between items-center lg:px-48 ">
           <div className="flex items-center justify-center">
-            <h1 className="text-2xl sm:text-3xl font-bold ">Atharva</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold"><a href="/">Atharva</a></h1>
             <span
               className="lg:text-xl text-xl px-2 mt-1 lg:mt-2 cursor-pointer"
               onClick={toggleTheme}

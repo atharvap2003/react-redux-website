@@ -10,6 +10,7 @@ import FourOfour from "./pages/FourOfour";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import { useSelector, useDispatch } from "react-redux";
+import ProjectInfo from "./pages/[productinfo]/ProjectInfo";
 
 const App = () => {
   // const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/project" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/error" element={<FourOfour />} />
+          <Route path="/projects/:id" element={<ProjectInfo/>} />
         </Routes>
         <Footer />
       </div>
