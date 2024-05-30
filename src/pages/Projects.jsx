@@ -26,20 +26,20 @@ const Projects = () => {
     {
       id: 3,
       name: "Movie Search Website",
-      image: "../assets/Screenshot (24).png",
+      image: "/src/assets/MovieSearchImage.png",
       description:
-        "Created using nextjs, firebase, framerMotion, tailwindcss. A web applications to describe about mushroom selling business.",
+        "Created using Reactjs, firebase, framerMotion, tailwindcss. A web applications to describe about mushroom selling business.",
     },
   ];
   const isDarkMode = useSelector((state)=> state.theme.isDarkModes);
 
   return (
     <div >
-      <h1 className="m-4 ">Project List</h1>
+      <h1 className="text-center text-2xl">Project List</h1>
       <main className="flex justify-center items-center flex-col cursor-pointer">
         {ProductList.map((i) => (
           <article
-            className={ isDarkMode? "bg-white dark:bg-zinc-800 rounded-lg shadow-md p-4 m-2 max-w-[700px] ": "bg-white dark:bg-zinc-800 rounded-lg shadow-md p-4 m-2 max-w-[700px] "}
+            className={ isDarkMode? "bg-white dark:bg-zinc-800 rounded-lg shadow-md p-4 m-2 max-w-[700px] ": "bg-white dark:bg-zinc-800 rounded-lg shadow-md p-4 m-2 max-w-[650px] "}
             key={i.id}
           >
             <Link href="">
