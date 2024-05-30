@@ -10,7 +10,7 @@ const Projects = () => {
     {
       id: 1,
       name: "Mushroom Business Website",
-      image: "/src/assets/MushroomProject.png",
+      image: "../assets/MushroomProject.png",
       description:
         "Created using NextJS, Firebase, Framer Motion UI library, tailwindcss. A web applications to describe about mushroom selling business.",
       
