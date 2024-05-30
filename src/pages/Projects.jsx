@@ -2,15 +2,19 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-//icons:
+//icons & images:
 import { GoArrowUpRight } from "react-icons/go";
+import MushroomImage from "../assets/MushroomProject.png";
+import PersonalWebsiteImage from "../assets/PersonalSiteImage.png";
+import MovieSearchImage from "../assets/MovieSearchImage.png";
+
 
 const Projects = () => {
   const ProductList = [
     {
       id: 1,
       name: "Mushroom Business Website",
-      image: "../assets/MushroomProject.png",
+      image: MushroomImage,
       description:
         "Created using NextJS, Firebase, Framer Motion UI library, tailwindcss. A web applications to describe about mushroom selling business.",
       
@@ -18,7 +22,7 @@ const Projects = () => {
     {
       id: 2,
       name: "Personal Website",
-      image: "/src/assets/PersonalSiteImage.png",
+      image: PersonalWebsiteImage,
       description:
         "Built using React.js, Redux Toolkit, Tailwind CSS, with rapid styling and Framer Motion Library ",
 
@@ -26,11 +30,12 @@ const Projects = () => {
     {
       id: 3,
       name: "Movie Search Website",
-      image: "/src/assets/MovieSearchImage.png",
+      image: MovieSearchImage,
       description:
         "Created using Reactjs, firebase, framerMotion, tailwindcss. A web applications to describe about mushroom selling business.",
     },
   ];
+  
   const isDarkMode = useSelector((state)=> state.theme.isDarkModes);
 
   return (
