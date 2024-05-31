@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import "./App.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -12,9 +12,20 @@ import Contact from "./pages/Contact";
 import { useSelector, useDispatch } from "react-redux";
 import ProjectInfo from "./pages/[productinfo]/ProjectInfo";
 
+import ReactGA from 'react-ga';
+
+
 const App = () => {
+  const TRACKING_ID = "G-QVE65598VN";
+  ReactGA.initialize(TRACKING_ID);
+
+  useEffect(()=>{
+    ReactGA.pageview(window.location.pathname);
+  },[]);
+
   // const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
+  
   return (
     <BrowserRouter>
       <div className={isDarkMode ? " bg-darktheme text-gray-300" : ""}>
@@ -33,3 +44,14 @@ const App = () => {
 };
 
 export default App;
+
+
+// <!-- Google tag (gtag.js) -->
+// <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVE65598VN"></script>
+// <script>
+//   window.dataLayer = window.dataLayer || [];
+//   function gtag(){dataLayer.push(arguments);}
+//   gtag('js', new Date());
+
+//   gtag('config', 'G-QVE65598VN');
+// </script>
