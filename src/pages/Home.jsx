@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+
+//framer-motion library:
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "framer-motion";
 
 //icons
 import { LuGithub } from "react-icons/lu";
@@ -15,6 +19,30 @@ import MushroomImage from "../assets/MushroomProject.png";
 import PersonalWebsiteImage from "../assets/PersonalSiteImage.png";
 import MovieSearchImage from "../assets/MovieSearchImage.png";
 import logo from "../assets/img-2.png";
+
+const cardVariant1 = {
+  hidden: { opacity: 0, y: -100 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const cardVariant2 = {
+  hidden : {opacity:0.1, y:-100},
+  visible :{
+    opacity : 1,
+    y: 0,
+    transition :{
+      duration: 2,
+      ease: "easeInOut"
+    }
+  }
+}
 
 const home = () => {
   const ProductList = [
@@ -43,12 +71,28 @@ const home = () => {
 
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
 
+  const controls = useAnimation();
+  const {ref, inView} = useInView({
+      triggerOnce : true,
+      threshold : 0.1,
+  });
+  useEffect(()=>{
+    if(inView){
+      controls.start('visible');
+    }
+  }, [controls, inView])
+
   return (
-    <>
-      <div
+    <div>
+      <motion.div
         className={
-          isDarkMode ? "bg-darktheme " : "bg-customRgb "
+          isDarkMode
+            ? "bg-darktheme min-h-screen "
+            : "bg-customRgb min-h-screen"
         }
+        variants={cardVariant1}
+        initial="hidden"
+        animate="visible"
       >
         <div className="container mx-auto px-4 py-12 lg:px-4">
           <div className="flex flex-col items-center">
@@ -135,19 +179,27 @@ const home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <main className={`${isDarkMode ? "bg-darktheme" : "bg-customRgb"}  flex flex-col justify-center`}>
+      <main
+        className={`${
+          isDarkMode ? "bg-darktheme" : "bg-customRgb"
+        }  flex flex-col justify-center `}
+      >
         {/* <h1 className="text-center  text-2xl font-bold">Projects</h1> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto">
           {ProductList.map((i) => (
-            <article
+            <motion.div
               className={
                 isDarkMode
                   ? "bg-white dark:bg-zinc-800 rounded-lg shadow-md p-4 m-2 max-w-[400px] min-w-[200px]"
                   : "bg-white dark:bg-zinc-800 rounded-lg shadow-md p-4 m-2 max-w-[400px] min-w-[300px]"
               }
               key={i.id}
+              variants={cardVariant2}
+              initial="hidden"
+              animate="visible"
+              ref={ref}
             >
               <Link href="">
                 <img
@@ -166,11 +218,11 @@ const home = () => {
                   <GoArrowUpRight className=" mt-1 text-xl hover:translate-x-2 transition-transform duration-300 " />
                 </button>
               </Link>
-            </article>
+            </motion.div>
           ))}
         </div>
       </main>
-    </>
+    </div>
   );
 };
 

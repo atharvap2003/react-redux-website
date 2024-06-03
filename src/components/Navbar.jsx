@@ -61,7 +61,7 @@ const Navbar = () => {
                   : " text-zinc-900"
               }
             >
-              Contact
+              Blog
             </a>
           </div>
         </div>
