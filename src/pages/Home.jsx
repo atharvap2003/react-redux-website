@@ -18,6 +18,8 @@ import { GoArrowUpRight } from "react-icons/go";
 import MushroomImage from "../assets/MushroomProject.png";
 import PersonalWebsiteImage from "../assets/PersonalSiteImage.png";
 import MovieSearchImage from "../assets/MovieSearchImage.png";
+import PropertySite from "../assets/PropertySite.png"
+import WeatherForecast from "../assets/WeatherForcast.png"
 import logo from "../assets/img-2.png";
 
 const cardVariant1 = {
@@ -48,24 +50,38 @@ const home = () => {
   const ProductList = [
     {
       id: 1,
+      name: "MERN Property Listing",
+      image: PropertySite,
+      description:
+        "Created using MERN Stack Technologies(ReactJS, NodeJS, ExpressJS, MongoDB). With feature of Authentication, User Management, Listing.",
+    },
+    {
+      id: 2,
       name: "Mushroom Business Website",
       image: MushroomImage,
       description:
         "Created using NextJS, Firebase, Framer Motion UI library, tailwindcss. A web applications to describe about mushroom selling business.",
     },
     {
-      id: 2,
+      id: 3,
       name: "Personal Website",
       image: PersonalWebsiteImage,
       description:
         "Built using React.js, Redux Toolkit, Tailwind CSS, with rapid styling and Framer Motion Library ",
     },
     {
-      id: 3,
+      id: 4,
       name: "Movie Search Website",
       image: MovieSearchImage,
       description:
         "Created using Reactjs, firebase, framerMotion, tailwindcss. A web applications to describe about mushroom selling business.",
+    },
+    {
+      id: 5,
+      name: "Weather Forcast",
+      image: WeatherForecast,
+      description:
+        "Created using Reactjs, Coingecko API, tailwindcss. A web applications to gives weather Information.",
     },
   ];
 
@@ -211,12 +227,7 @@ const home = () => {
                 <p className="text-zinc-600 dark:text-zinc-400 text-md">
                   {i.description}
                 </p>
-                <button className="flex text-white rounded-lg mt-2 hover:underline decoration-1 my-1">
-                  <p className="hover:underline decoration-1 decoration-dotted">
-                    Click for More
-                  </p>
-                  <GoArrowUpRight className=" mt-1 text-xl hover:translate-x-2 transition-transform duration-300 " />
-                </button>
+                
               </Link>
             </motion.div>
           ))}
